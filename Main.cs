@@ -13,6 +13,8 @@ using System.Xml;
 using System.Threading;
 using Microsoft.Win32;
 using Advapi32;
+using Synopsys.ARC.WinSW.Extensions;
+using Synopsys.ARC.WinSW.Utils;
 
 namespace winsw
 {
@@ -38,7 +40,7 @@ namespace winsw
         SERVICE_PAUSED = 0x00000007,
     }
     
-    public class WrapperService : ServiceBase, EventLogger
+    public class WrapperService : ServiceBase, EventLogger, IEventWriter
     {
         [DllImport("ADVAPI32.DLL")]
         private static extern bool SetServiceStatus(IntPtr hServiceStatus, ref SERVICE_STATUS lpServiceStatus);

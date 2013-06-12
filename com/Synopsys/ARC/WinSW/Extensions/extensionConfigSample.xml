@@ -1,0 +1,78 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<!--
+* The MIT License
+*
+* Copyright (c) 2013, Oleg Nenashev <nenashev@synopsys.com>
+  , Synopsys Inc
+  *
+  * Permission is hereby granted, free of charge, to any person obtaining a copy
+  * of this software and associated documentation files (the "Software"), to deal
+  * in the Software without restriction, including without limitation the rights
+  * to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+  * copies of the Software, and to permit persons to whom the Software is
+  * furnished to do so, subject to the following conditions:
+  *
+  * The above copyright notice and this permission notice shall be included in
+  * all copies or substantial portions of the Software.
+  *
+  * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  * IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  * FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+  * AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  * LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+  * OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+  * SOFTWARE.
+  -->
+
+
+<!--Structure has been inspired by Maven, of course-->
+
+<extensionManager>
+  
+  <pluginSources>
+    <!--Plugins from WinSW dll-->
+    <builtIn>
+      <groupIds>
+        <groupId>Synopsys.ARC.WinSW</groupId>
+      </groupIds>
+    </builtIn>
+    <!--Plugins from local DLLs-->
+    <localDll>
+      <path>plugins/Synopsys.DWARC.WinSW.Plugins.SharedDirectoryMapper.dll</path>
+      <groupIds>
+        <groupId>Synopsys.ARC.WinSW</groupId>
+      </groupIds>
+    </localDll> 
+    <!--TODO: Download plugins using URL-->
+  </pluginSources>
+
+  <extensions>
+    <plugin name="WorkspaceMapper">
+      <groupId>Synopsys.ARC.WinSW</groupId>
+      <artifactId>SharedDirectoryMapper</artifactId>
+      <version>1.0</version>
+      <parameters>
+        <directoryUNC>\\testWorkspace</directoryUNC>
+        <driveLabel>N:</driveLabel>
+      </parameters>
+      <goals>
+        <goal>START</goal>
+        <goal>STOP</goal>
+      </goals>
+    </plugin> 
+    
+    <plugin name="ToolsDirectoryMapper">
+      <groupId>Synopsys.ARC.WinSW</groupId>
+      <artifactId>SharedDirectoryMapper</artifactId>
+      <version>1.0</version>
+      <parameters>
+        <directoryUNC>\\testTools</directoryUNC>
+        <driveLabel>M:</driveLabel>
+      </parameters>
+      <goals>
+        <goal>START</goal>
+        <goal>STOP</goal>
+      </goals>
+    </plugin>
+  </extensions>
+</extensionManager>

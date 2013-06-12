@@ -84,6 +84,20 @@ namespace winsw
             return n == null ? null : Environment.ExpandEnvironmentVariables(n.InnerText);
         }
 
+        /// <summary>
+        /// Gets node from XML document
+        /// </summary>
+        /// <param name="tagName"></param>
+        /// <param name="optional"></param>
+        /// <exception cref="InvalidDataException">Unexistent node</exception>
+        /// <returns></returns>
+        private XmlNode SingleElementNode(string tagName, Boolean optional)
+        {
+            var n = dom.SelectSingleNode("//" + tagName);
+            if (n == null && !optional) throw new InvalidDataException("<" + tagName + "> is missing in configuration XML");
+            return n;
+        }
+
         private int SingleIntElement(XmlNode parent, string tagName, int defaultValue)
         {
             var e = parent.SelectSingleNode(tagName);
@@ -285,6 +299,14 @@ namespace winsw
                 {
                     return Path.GetDirectoryName(ExecutablePath);
                 }
+            }
+        }
+
+        public XmlNode ExtensionManagerConfig
+        {
+            get
+            {
+                return SingleElementNode("//extensionManager", true);
             }
         }
 
