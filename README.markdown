@@ -13,6 +13,16 @@ Download
 --------
 [Binaries are available here](http://repo.jenkins-ci.org/releases/com/sun/winsw/winsw/)
 
+Contributors
+-----------
+1. [Kohsuke Kawaguchi][1]
+  - Most of initial WinSW core
+
+2. [Oleg Nenashev][2], [Synopsys Inc.][3]
+  - Support of maven-alike extensions
+
+N. And all other comitters and users
+
 Usage
 -----
 You write the configuration file that defines your service. This is the one I use for Jenkins:
@@ -199,3 +209,7 @@ See the "Logging" section above for more details.
 This optional element sets the current directory of the process launched by winsw.
 
     <workingdirectory>%SystemDrive%\</workingdirectory>
+
+[1]: https://github.com/kohsuke
+[2]: https://github.com/oleg-nenashev
+[3]: http://www.synopsys.com
