@@ -72,6 +72,17 @@ namespace winsw
             dom.Load(BasePath + ".xml");
         }
 
+        /// <summary>
+        /// Constructor for the custom config path
+        /// </summary>
+        /// <param name="filePath"></param>
+        public ServiceDescriptor(string filePath)
+        {
+            BaseName = Path.GetFileNameWithoutExtension(filePath);
+            //TODO: set BasePath (useless)
+            dom.Load(filePath);
+        }
+
         private string SingleElement(string tagName)
         {
             return SingleElement(tagName, false);
@@ -306,7 +317,7 @@ namespace winsw
         {
             get
             {
-                return SingleElementNode("//extensionManager", true);
+                return SingleElementNode("extensionManager", true);
             }
         }
 

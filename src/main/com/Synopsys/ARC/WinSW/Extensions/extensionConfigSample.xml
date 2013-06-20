@@ -55,10 +55,10 @@
         <directoryUNC>\\testWorkspace</directoryUNC>
         <driveLabel>N:</driveLabel>
       </parameters>
-      <goals>
+      <!--<goals>
         <goal>START</goal>
         <goal>STOP</goal>
-      </goals>
+      </goals> -->
     </plugin> 
     
     <plugin name="ToolsDirectoryMapper">
@@ -69,10 +69,10 @@
         <directoryUNC>\\testTools</directoryUNC>
         <driveLabel>M:</driveLabel>
       </parameters>
-      <goals>
+      <!--<goals>
         <goal>START</goal>
         <goal>STOP</goal>
-      </goals>
+      </goals> -->
     </plugin>
   </extensions>
 </extensionManager>

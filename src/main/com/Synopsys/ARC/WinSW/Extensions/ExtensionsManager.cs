@@ -30,7 +30,7 @@ using System.Diagnostics;
 
 namespace Synopsys.ARC.WinSW.Extensions
 {
-    class ExtensionsManager
+    public class ExtensionsManager
     {
         private Dictionary<string, IWinSWExtension> extensions = new Dictionary<string, IWinSWExtension>();
         public IEventWriter Logger { get; private set; }
@@ -56,13 +56,14 @@ namespace Synopsys.ARC.WinSW.Extensions
 
         public void Enable(XmlNode config)
         {
-
+            ReadConfiguration(config);
             Enabled = true;
         }
 
         private void ReadConfiguration(XmlNode config)
         {
             //TODO: implement
+
         }
 
         #endregion
