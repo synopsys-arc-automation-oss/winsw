@@ -67,6 +67,12 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Advapi32.cs" />
+    <Compile Include="com\Synopsys\ARC\WinSW\Extensions\ExtensionsConfig.cs" />
+    <Compile Include="com\Synopsys\ARC\WinSW\Extensions\Sources\AbstractExtensionLoader.cs" />
+    <Compile Include="com\Synopsys\ARC\WinSW\Extensions\Sources\ExtensionSourceDescription.cs" />
+    <Compile Include="com\Synopsys\ARC\WinSW\Extensions\Sources\ExtensionSourceType.cs" />
+    <Compile Include="com\Synopsys\ARC\WinSW\Extensions\Sources\IExtensionLoader.cs" />
+    <Compile Include="com\Synopsys\ARC\WinSW\Extensions\Sources\LocalExtensionsLoader.cs" />
     <Compile Include="com\Synopsys\ARC\WinSW\Utils\ConsoleLogger.cs" />
     <Compile Include="Download.cs" />
     <Compile Include="DynamicProxy.cs" />
