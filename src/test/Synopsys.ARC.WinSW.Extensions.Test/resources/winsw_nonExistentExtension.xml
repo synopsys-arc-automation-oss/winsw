@@ -1,0 +1,31 @@
+﻿<configuration>
+  <id>winsw</id>
+  <name>Winsw test service(2)</name>
+  <description>This service is a do-nothing test app. Really.</description>
+  <download from="http://www.google.com/" to="%BASE%\index.html" />
+  <download from="http://www.nosuchhostexists.com/" to="%BASE%\dummy.html" />
+
+  <executable>C:\development\jdk6u7\bin\java.exe</executable>
+  <arguments>-classpath c:\cygwin\home\kohsuke\ws\hello-world\out\production\hello-world test.Main</arguments>
+
+  <extensionManager>
+    <pluginSources>
+      <builtIn>
+        <groupIds>
+          <groupId>Synopsys.ARC.WinSW</groupId>
+        </groupIds>
+      </builtIn>
+    </pluginSources>
+    <extensions>
+      <plugin name="WorkspaceMapper">
+        <groupId>Synopsys.ARC.WinSW</groupId>
+        <artifactId>JenkinsRocks</artifactId>
+        <version>1.0</version>
+        <parameters>
+          <directoryUNC>\\testWorkspace</directoryUNC>
+          <driveLabel>N:</driveLabel>
+        </parameters>
+      </plugin>
+    </extensions>
+  </extensionManager>
+</configuration>

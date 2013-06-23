@@ -7,7 +7,19 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{5DCFB340
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "winsw", "src\main\winsw.csproj", "{0DE77F55-ADE5-43C1-999A-0BC81153B039}"
 EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution Items", "{5E53D995-F6D7-4A10-9735-208DCF69550B}"
+	ProjectSection(SolutionItems) = preProject
+		Local.testsettings = Local.testsettings
+		TraceAndTestImpact.testsettings = TraceAndTestImpact.testsettings
+		winsw.vsmdi = winsw.vsmdi
+	EndProjectSection
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Synopsys.ARC.WinSW.Extensions.Test", "src\test\Synopsys.ARC.WinSW.Extensions.Test\Synopsys.ARC.WinSW.Extensions.Test.csproj", "{B5A0C641-B7A6-4107-8817-64174BB0BC9F}"
+EndProject
 Global
+	GlobalSection(TestCaseManagementSettings) = postSolution
+		CategoryFile = winsw.vsmdi
+	EndGlobalSection
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
 		Release|Any CPU = Release|Any CPU
@@ -17,8 +29,15 @@ Global
 		{0DE77F55-ADE5-43C1-999A-0BC81153B039}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{0DE77F55-ADE5-43C1-999A-0BC81153B039}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{0DE77F55-ADE5-43C1-999A-0BC81153B039}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5A0C641-B7A6-4107-8817-64174BB0BC9F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5A0C641-B7A6-4107-8817-64174BB0BC9F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5A0C641-B7A6-4107-8817-64174BB0BC9F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5A0C641-B7A6-4107-8817-64174BB0BC9F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{B5A0C641-B7A6-4107-8817-64174BB0BC9F} = {5DCFB340-8331-4452-A7BF-410ACC5D5169}
 	EndGlobalSection
 EndGlobal
